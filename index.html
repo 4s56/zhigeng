@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>知更 · 你的个人智能体</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <aside class="rail">
+    <div class="brand" title="知更">知</div>
+
+    <button class="rail-btn active" data-nav="today" title="知更">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"></path>
+      </svg>
+    </button>
+
+    <button class="rail-btn" data-nav="chats" title="对话">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.5 11.5c0 4.1-3.8 7.5-8.5 7.5-1 0-2-.15-2.9-.43L4.5 20l1.2-3.7C4.3 14.9 3.5 13.3 3.5 11.5 3.5 7.4 7.3 4 12 4s8.5 3.4 8.5 7.5z"></path>
+      </svg>
+    </button>
+
+    <button class="rail-btn" data-nav="ideas" title="灵感（Ctrl+Alt+R 说一句）">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 17.5h6"></path>
+        <path d="M10 20.5h4"></path>
+        <path d="M12 3a6 6 0 0 0-3.5 10.9c.4.3.6.7.6 1.2v.4h5.8v-.4c0-.5.2-.9.6-1.2A6 6 0 0 0 12 3z"></path>
+      </svg>
+    </button>
+
+    <button class="rail-btn" data-nav="discover" title="发现（每天推几个新项目）">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M15.6 8.4l-2.3 5-5 2.3 2.3-5z"></path>
+      </svg>
+    </button>
+
+    <button class="rail-btn" data-nav="memory" title="记忆">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3c-3 0-4.6 1.9-4.6 4 0 .9.3 1.6.3 2.6 0 1.4-1.7 1.9-1.7 3.8 0 1.6 1.2 2.5 2.4 2.7.2 1.9 1.5 3.9 3.6 3.9"></path>
+        <path d="M12 3c3 0 4.6 1.9 4.6 4 0 .9-.3 1.6-.3 2.6 0 1.4 1.7 1.9 1.7 3.8 0 1.6-1.2 2.5-2.4 2.7-.2 1.9-1.5 3.9-3.6 3.9"></path>
+        <path d="M12 3v7"></path>
+      </svg>
+    </button>
+
+    <button class="rail-btn" data-nav="tasks" title="任务">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3.5" y="4.5" width="17" height="15" rx="3"></rect>
+        <path d="M8 12.2l2.6 2.6L16.4 9"></path>
+      </svg>
+    </button>
+
+    <button class="rail-btn" data-nav="caps" title="能力">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"></path>
+        <path d="M18.5 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"></path>
+      </svg>
+    </button>
+
+    <div class="rail-spacer"></div>
+
+    <button class="rail-btn" id="themeBtn" title="切换深浅色">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"></path>
+      </svg>
+    </button>
+
+    <button class="rail-btn" id="setBtn" title="设置">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 9 19.4a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1A1.6 1.6 0 0 0 4.6 9a1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H9a1.6 1.6 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V9a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"></path>
+      </svg>
+    </button>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="date">
+        <span class="d-main" id="dateMain">今天</span>
+        <span class="d-sub" id="dateSub"></span>
+      </div>
+      <button class="ghost" id="newChat">＋ 新对话</button>
+    </header>
+
+    <section class="stream" id="stream"></section>
+
+    <div class="composer-wrap">
+      <div class="composer">
+        <textarea id="input" rows="1" placeholder="和 知更说点什么…"></textarea>
+        <button id="send" class="send" title="发送">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5M6 11l6-6 6 6"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="hint">Enter 发送 · Shift + Enter 换行</div>
+    </div>
+  </main>
+
+  <aside class="panel" id="panel">
+    <div class="panel-head">
+      <span id="panelTitle">记忆</span>
+      <button class="ghost icon" id="panelClose">×</button>
+    </div>
+    <div class="panel-body" id="panelBody"></div>
+    <div class="panel-foot" id="panelFoot"></div>
+  </aside>
+
+</div>
+
+<div class="modal-backdrop" id="modal">
+  <div class="modal">
+    <div class="modal-head">
+      <h2>设置</h2>
+      <button class="ghost icon" id="modalClose">×</button>
+    </div>
+
+    <label class="field">
+      <span class="label">服务商</span>
+      <select id="fProvider">
+        <option value="anthropic">Claude（Anthropic 官方）</option>
+        <option value="openai">兼容 OpenAI 接口（DeepSeek / Kimi / 通义 / 智谱 …）</option>
+      </select>
+    </label>
+
+    <label class="field">
+      <span class="label">API Key</span>
+      <div class="keyrow">
+        <input id="fKey" type="password" placeholder="sk-…" autocomplete="off" spellcheck="false">
+        <button class="ghost icon" id="eyeBtn" title="显示/隐藏">👁</button>
+      </div>
+    </label>
+
+    <label class="field" id="baseField">
+      <span class="label">接口地址</span>
+      <input id="fBase" placeholder="https://api.deepseek.com/v1" spellcheck="false">
+    </label>
+
+    <label class="field">
+      <span class="label">模型</span>
+      <input id="fModel" list="modelList" placeholder="claude-opus-5-5" spellcheck="false">
+      <datalist id="modelList"></datalist>
+    </label>
+
+    <label class="field">
+      <span class="label">工作目录（它能读写的范围）</span>
+      <input id="fWorkspace" placeholder="留空 = 本程序上一层目录" spellcheck="false">
+    </label>
+
+    <label class="field check">
+      <input type="checkbox" id="fBg">
+      <span>启用后台定时任务（08:00 / 22:00 简报，09:00 推送新项目；关机错过会补跑）</span>
+    </label>
+
+    <p class="tip" id="schedTip"></p>
+
+    <p class="tip">Key 存在这台电脑上（本机 <code>data/config.json</code>），只发给你选的服务商，不经过任何第三方。<br>
+      填过一次就会记住，下次打开窗口不用重填。<br>
+      文件工具的路径会被限制在工作目录内，越界直接拒绝。</p>
+
+    <div class="modal-actions">
+      <button class="ghost danger" id="resetBtn">清空全部数据</button>
+      <button class="primary" id="saveBtn">保存</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

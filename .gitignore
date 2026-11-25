@@ -1,0 +1,20 @@
+# 个人数据：对话、记忆、任务、日记、API Key、浏览器配置——绝不进仓库
+data/
+
+# 运行时产物
+__pycache__/
+*.pyc
+*.pyo
+*.log
+
+# 本地模型（几百 MB）
+models/
+*.bin
+
+# MCP 依赖，用 npm install 恢复
+mcp/node_modules/
+
+# 构建中间产物
+build/
+dist/
+*.spec

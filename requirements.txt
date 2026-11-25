@@ -1,0 +1,8 @@
+# 核心：聊天与 HTTP 服务只用标准库；下面这些是桌面窗口、语音、模型调用要用的
+anthropic>=0.40          # 走 Anthropic 官方接口时用（兼容 OpenAI 接口时不需要）
+pywebview>=5.0           # 桌面窗口（Windows 下依赖 pythonnet + WebView2 运行时）
+pythonnet>=3.0
+sounddevice>=0.4         # 录音（WASAPI 回环 / 麦克风）
+numpy>=1.24
+faster-whisper>=1.0      # 本地语音转写
+keyboard>=0.13           # 全局热键 Ctrl+Alt+R
