@@ -1,4 +1,4 @@
-// 知更 桌面启动器：找到 Python，静默拉起 app.py（原生窗口 + 本地服务）。
+//知更 桌面启动器：找到 Python，静默拉起 app.py（原生窗口 + 本地服务）。
 using System;
 using System.Diagnostics;
 using System.IO;

@@ -591,7 +591,7 @@ TOOLS = [
         "description": (
             "改「发现」面板里的状态：收藏 / 取消收藏 / 标记已看 / 标记未看。"
             "用户说「都收藏了」「把这些标记一下」时用，scope=all 就是全部。"
-            "不要用文件工具去改 data/state.json，那是 知更 自己的数据库。"
+            "不要用文件工具去改 data/state.json，那是知更 自己的数据库。"
         ),
         "input_schema": {
             "type": "object",
@@ -808,7 +808,7 @@ def _in_data_dir(p, cfg):
     return full == data or full.startswith(data + os.sep)
 
 
-DATA_GUARD_MSG = ("这是 知更 自己的数据目录（state.json / config.json 等），"
+DATA_GUARD_MSG = ("这是知更 自己的数据目录（state.json / config.json 等），"
                   "不能直接用文件工具改。发现面板用 list_discover / mark_discover，"
                   "记忆和任务用 remember / add_task 这些工具。")
 
@@ -1398,7 +1398,7 @@ def build_system(state, cfg):
         "改文件的铁律：先 read_file 看现状，再 edit_file 做局部替换；"
         "只有整份重写才用 write_file。old_text 要足够长以保证唯一。\n"
         "改完务必用一句话说清楚：改了哪个文件、哪一处、改成了什么。\n"
-        "铁律：data/ 目录是 知更 自己的数据库（state.json 等），任何文件工具都不许写它——"
+        "铁律：data/ 目录是知更 自己的数据库（state.json 等），任何文件工具都不许写它——"
         "发现面板用 list_discover / mark_discover，记忆和任务用对应工具。\n\n"
         "【可用技能】任务和下面某条描述对得上时，先 use_skill 读它的完整指南，再按里面的步骤和铁律做，"
         "不要凭印象假装读过。\n" + skill_txt + "\n\n"

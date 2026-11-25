@@ -1,6 +1,6 @@
 @echo off
 chcp 65001 >nul
-title 知更 · 个人智能体
+title知更 · 个人智能体
 cd /d "%~dp0"
 echo.
 echo   正在启动「知更」...

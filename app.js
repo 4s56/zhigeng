@@ -188,7 +188,7 @@ function renderHello() {
   const el = document.createElement('div');
   el.className = 'hello';
   el.innerHTML =
-    '<h1>' + greet + '，我是 知更。</h1>' +
+    '<h1>' + greet + '，我是知更。</h1>' +
     '<p>' + (hasKey
       ? '我不只是回答问题。你说过的事我会记住，你提到要做的事我会替你记在清单上。'
       : '先填一个 API Key，我就能开始工作了。点左下角的齿轮。') + '</p>' +
