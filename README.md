@@ -44,7 +44,7 @@ python app.py                        # 桌面窗口；或 python server.py 用�
 | 服务商 | 接口地址 | 模型填什么 |
 |---|---|---|
 | Claude（Anthropic 官方） | 留空即可 | `claude-opus-5-5` / `claude-sonnet-5-5` / `claude-haiku-5-5` |
-| DeepSeek |  deepseek v4.1-flash 等
+| DeepSeek |  https://deepseek.com  |  deepseek v4.1-flash等（填deepseek-flash）  |
 | Kimi（月之暗面） | `https://api.moonshot.cn/v1` | `moonshot-v1-8k` |
 | 通义千问 | `https://dashscope.aliyuncs.com/compatible-mode/v1` | `qwen-plus` |
 | 智谱 | `https://open.bigmodel.cn/api/paas/v4` | `glm-4-plus` |
